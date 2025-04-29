@@ -1,0 +1,25 @@
+{
+  "name": "qa-serverest-api",
+  "version": "1.0.0",
+  "description": "Este repositório contém testes automatizados de API desenvolvidos com **Jest**, **Supertest** e **TypeScript**, com foco na validação dos endpoints da [API Serverest](https://serverest.dev/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "supertest": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/supertest": "^6.0.3",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
