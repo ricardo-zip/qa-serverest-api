@@ -1,12 +1,12 @@
-# QA - Serverest API (Jest + Pactum + TypeScript)
+# QA - Serverest API (Jest + PactumJS + TypeScript)
 
-Este repositório contém testes automatizados de API desenvolvidos com **Jest**, **Pactum** e **TypeScript**, com foco na validação dos endpoints da [API Serverest](https://serverest.dev/).
+Este repositório contém testes automatizados de API desenvolvidos com **Jest**, **PactumJS** e **TypeScript**, com foco na validação dos endpoints da [API Serverest](https://serverest.dev/).
 
 ## 🔧 Tecnologias utilizadas
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Jest](https://jestjs.io/) — Framework de testes
-- [Supertest](https://pactumjs.github.io/introduction/welcome.html) — Cliente HTTP para testes de APIs
+- [Pactumjs](https://pactumjs.github.io/introduction/welcome.html) — Cliente HTTP para testes de APIs
 - [ts-jest](https://kulshekhar.github.io/ts-jest/) — Integração entre TypeScript e Jest
 
 
