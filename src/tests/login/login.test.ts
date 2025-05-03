@@ -1,11 +1,41 @@
-import { Serverest } from '../services/serverest';
-import { loginValido } from '../../data/login.data';
+import { spec } from 'pactum';
+import UsersDataBuilder from "../../builder/user.dataBuilder";
 
 describe('Login - Serverest API', () => {
-  it('Deve realizar login com sucesso', async () => {
-    const response = await Serverest.login(loginValido);
-    expect(response.status).toBe(200);
-    expect(response.body.message).toBe("Login realizado com sucesso");
-    expect(response.body.authorization).toBeDefined();
-  });
+  it('deve realizar login com sucesso', async () => {
+
+    const user = new UsersDataBuilder()
+      .withEmail('fulano@qa.com')
+      .withPassword('teste')
+      .build()
+
+    await spec()
+      .post('https://serverest.dev/login')
+      .withBody({
+        email: user.email,
+        password: user.password,
+      })
+      .expectStatus(200)
+      .expectJsonLike({
+        message: 'Login realizado com sucesso'
+      })
+  })
+
+  it('deve falhar ao autenticar usuário com dados incorretos', async () => {
+    const user = new UsersDataBuilder()
+    .withEmail('fulano@qa3000.com')
+    .withPassword('teste')
+    .build()
+
+  await spec()
+    .post('https://serverest.dev/login')
+    .withBody({
+      email: user.email,
+      password: user.password,
+    })
+    .expectStatus(401)
+    .expectJsonLike({
+      message: 'Email e/ou senha inválidos'
+    })
+  })
 });
